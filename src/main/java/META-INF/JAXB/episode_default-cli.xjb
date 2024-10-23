@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.10.23 a las 04:15:27 AM PET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects">
+    <schemaBindings map="false">
+      <package name="pe.com.libreriachanway.ws.objects"/>
+    </schemaBindings>
+    <bindings scd="tns:getLibrosRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.GetLibrosRequest"/>
+    </bindings>
+    <bindings scd="tns:getLibrosResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.GetLibrosResponse"/>
+    </bindings>
+    <bindings scd="~tns:librows">
+      <class ref="pe.com.libreriachanway.ws.objects.Librows"/>
+    </bindings>
+    <bindings scd="tns:getLibroRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.GetLibroRequest"/>
+    </bindings>
+    <bindings scd="tns:getLibroResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.GetLibroResponse"/>
+    </bindings>
+    <bindings scd="tns:postLibroRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.PostLibroRequest"/>
+    </bindings>
+    <bindings scd="tns:postLibroResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.PostLibroResponse"/>
+    </bindings>
+    <bindings scd="tns:putLibroRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.PutLibroRequest"/>
+    </bindings>
+    <bindings scd="tns:putLibroResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.PutLibroResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

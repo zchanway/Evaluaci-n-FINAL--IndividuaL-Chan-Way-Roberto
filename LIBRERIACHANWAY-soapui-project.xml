@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="522614cd-05bb-4185-a9bd-cf981c0f5f60" activeEnvironment="Default" name="LIBRERIACHANWAY" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="080bc1e3-b55f-443e-9b1b-43df597fa24d" wsaVersion="NONE" name="LibrosPortSoap11" type="wsdl" bindingName="{http://www.libreriaChanWay.com.pe/ws/objects}LibrosPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8081/ws/libros.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8081/ws/libros.wsdl"><con:part><con:url>http://localhost:8081/ws/libros.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.libreriaChanWay.com.pe/ws/objects" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.libreriaChanWay.com.pe/ws/objects" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.libreriaChanWay.com.pe/ws/objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="librows">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="titulo" type="xs:string"/>
+          <xs:element name="autor_id" type="xs:long"/>
+          <xs:element name="categoria_id" type="xs:long"/>
+          <xs:element name="precio" type="xs:decimal"/>
+          <xs:element name="cantidad" type="xs:int"/>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element name="fecha_publicacion" type="xs:date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getLibrosRequest">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLibrosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="libros" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLibroRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLibroResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="libro" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postLibroRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="libro" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postLibroResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="libro" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="putLibroRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="libro" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="putLibroResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="libro" type="tns:librows"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="putLibroRequest">
+    <wsdl:part element="tns:putLibroRequest" name="putLibroRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="putLibroResponse">
+    <wsdl:part element="tns:putLibroResponse" name="putLibroResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibroResponse">
+    <wsdl:part element="tns:getLibroResponse" name="getLibroResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibrosResponse">
+    <wsdl:part element="tns:getLibrosResponse" name="getLibrosResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibroRequest">
+    <wsdl:part element="tns:getLibroRequest" name="getLibroRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="postLibroRequest">
+    <wsdl:part element="tns:postLibroRequest" name="postLibroRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="postLibroResponse">
+    <wsdl:part element="tns:postLibroResponse" name="postLibroResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibrosRequest">
+    <wsdl:part element="tns:getLibrosRequest" name="getLibrosRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LibrosPort">
+    <wsdl:operation name="putLibro">
+      <wsdl:input message="tns:putLibroRequest" name="putLibroRequest"></wsdl:input>
+      <wsdl:output message="tns:putLibroResponse" name="putLibroResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLibro">
+      <wsdl:input message="tns:getLibroRequest" name="getLibroRequest"></wsdl:input>
+      <wsdl:output message="tns:getLibroResponse" name="getLibroResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLibros">
+      <wsdl:input message="tns:getLibrosRequest" name="getLibrosRequest"></wsdl:input>
+      <wsdl:output message="tns:getLibrosResponse" name="getLibrosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postLibro">
+      <wsdl:input message="tns:postLibroRequest" name="postLibroRequest"></wsdl:input>
+      <wsdl:output message="tns:postLibroResponse" name="postLibroResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LibrosPortSoap11" type="tns:LibrosPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="putLibro">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="putLibroRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="putLibroResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLibro">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getLibroRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLibroResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLibros">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getLibrosRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLibrosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postLibro">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="postLibroRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="postLibroResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibrosPortService">
+    <wsdl:port binding="tns:LibrosPortSoap11" name="LibrosPortSoap11">
+      <soap:address location="http://localhost:8081/ws/libros"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/ws/libros</con:endpoint></con:endpoints><con:operation id="3322b247-b95f-4f8b-b1d1-29f4658d7fcc" isOneWay="false" action="" name="getLibro" bindingOperationName="getLibro" type="Request-Response" outputName="getLibroResponse" inputName="getLibroRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="de5656ef-228e-409c-bd62-adc73aa6251f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws/libros</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:obj="http://www.libreriaChanWay.com.pe/ws/objects">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <obj:getLibroRequest>\r
+         <obj:id>1</obj:id>\r
+      </obj:getLibroRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.libreriaChanWay.com.pe/ws/objects/LibrosPort/getLibroRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f549b73c-2d7d-4851-96a3-02f32a7a0152" isOneWay="false" action="" name="getLibros" bindingOperationName="getLibros" type="Request-Response" outputName="getLibrosResponse" inputName="getLibrosRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e9976e08-a128-43b7-b008-300d1d503fdb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws/libros</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:obj="http://www.libreriaChanWay.com.pe/ws/objects">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <obj:getLibrosRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.libreriaChanWay.com.pe/ws/objects/LibrosPort/getLibrosRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="95ad9e14-2c6b-4694-b32d-3f3613af24d5" isOneWay="false" action="" name="postLibro" bindingOperationName="postLibro" type="Request-Response" outputName="postLibroResponse" inputName="postLibroRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="99a51738-ddcf-4618-a782-0c48937113f0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws/libros</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:obj="http://www.libreriaChanWay.com.pe/ws/objects">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <obj:postLibroRequest>\r
+         <obj:libro>\r
+            <obj:id>?</obj:id>\r
+            <obj:titulo>?</obj:titulo>\r
+            <obj:autor_id>?</obj:autor_id>\r
+            <obj:categoria_id>?</obj:categoria_id>\r
+            <obj:precio>?</obj:precio>\r
+            <obj:cantidad>?</obj:cantidad>\r
+            <!--Optional:-->\r
+            <obj:descripcion>?</obj:descripcion>\r
+            <obj:fecha_publicacion>?</obj:fecha_publicacion>\r
+         </obj:libro>\r
+      </obj:postLibroRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.libreriaChanWay.com.pe/ws/objects/LibrosPort/postLibroRequest"/></con:call></con:operation><con:operation id="0491dbba-5ba0-4a62-8eee-caf9126870df" isOneWay="false" action="" name="putLibro" bindingOperationName="putLibro" type="Request-Response" outputName="putLibroResponse" inputName="putLibroRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4afa4cd7-c129-44f7-b7b4-92a103f49806" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws/libros</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:obj="http://www.libreriaChanWay.com.pe/ws/objects">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <obj:putLibroRequest>\r
+         <obj:libro>\r
+            <obj:id>1</obj:id>\r
+            <obj:titulo>A</obj:titulo>\r
+            <obj:autor_id>1</obj:autor_id>\r
+            <obj:categoria_id>5</obj:categoria_id>\r
+            <obj:precio>25</obj:precio>\r
+            <obj:cantidad>6</obj:cantidad>\r
+            <!--Optional:-->\r
+            <obj:descripcion>aa</obj:descripcion>\r
+            <obj:fecha_publicacion>A</obj:fecha_publicacion>\r
+         </obj:libro>\r
+      </obj:putLibroRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.libreriaChanWay.com.pe/ws/objects/LibrosPort/putLibroRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

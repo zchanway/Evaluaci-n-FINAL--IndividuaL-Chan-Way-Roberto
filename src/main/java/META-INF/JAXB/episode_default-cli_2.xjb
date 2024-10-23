@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.10.23 a las 04:17:37 AM PET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects">
+    <schemaBindings map="false">
+      <package name="pe.com.libreriachanway.ws.objects"/>
+    </schemaBindings>
+    <bindings scd="tns:getCategoriasRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.GetCategoriasRequest"/>
+    </bindings>
+    <bindings scd="tns:getCategoriasResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.GetCategoriasResponse"/>
+    </bindings>
+    <bindings scd="~tns:categoriaws">
+      <class ref="pe.com.libreriachanway.ws.objects.Categoriaws"/>
+    </bindings>
+    <bindings scd="tns:getCategoriaRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.GetCategoriaRequest"/>
+    </bindings>
+    <bindings scd="tns:getCategoriaResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.GetCategoriaResponse"/>
+    </bindings>
+    <bindings scd="tns:postCategoriaRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.PostCategoriaRequest"/>
+    </bindings>
+    <bindings scd="tns:postCategoriaResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.PostCategoriaResponse"/>
+    </bindings>
+    <bindings scd="tns:putCategoriaRequest">
+      <class ref="pe.com.libreriachanway.ws.objects.PutCategoriaRequest"/>
+    </bindings>
+    <bindings scd="tns:putCategoriaResponse">
+      <class ref="pe.com.libreriachanway.ws.objects.PutCategoriaResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

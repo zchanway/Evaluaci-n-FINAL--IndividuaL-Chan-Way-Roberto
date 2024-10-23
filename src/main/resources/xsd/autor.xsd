@@ -1,0 +1,77 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects"
+           targetNamespace="http://www.libreriaChanWay.com.pe/ws/objects"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="autorws">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="biografia" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getAutoresRequest">
+        <xs:complexType>
+            <xs:sequence />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAutoresResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autores" type="tns:autorws" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAutorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAutorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postAutorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postAutorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="putAutorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="putAutorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

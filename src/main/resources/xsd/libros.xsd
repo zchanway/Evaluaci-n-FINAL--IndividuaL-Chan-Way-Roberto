@@ -1,0 +1,82 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects"
+           targetNamespace="http://www.libreriaChanWay.com.pe/ws/objects"
+           elementFormDefault="qualified">
+
+            <xs:complexType name="librows">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="titulo" type="xs:string"/>
+                    <xs:element name="autor_id" type="xs:long"/>
+                    <xs:element name="categoria_id" type="xs:long"/>
+                    <xs:element name="precio" type="xs:decimal"/>
+                    <xs:element name="cantidad" type="xs:int"/>
+                    <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+                    <xs:element name="fecha_publicacion" type="xs:date"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="getLibrosRequest">
+                <xs:complexType>
+                    <xs:sequence />
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="getLibrosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="libros" type="tns:librows" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+    <xs:element name="getLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:librows"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:librows"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:librows"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="putLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:librows"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="putLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:librows"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

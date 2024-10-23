@@ -1,0 +1,77 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.libreriaChanWay.com.pe/ws/objects"
+           targetNamespace="http://www.libreriaChanWay.com.pe/ws/objects"
+           elementFormDefault="qualified">
+
+
+    <xs:complexType name="categoriaws">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="nombre" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="getCategoriasRequest">
+        <xs:complexType>
+            <xs:sequence />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCategoriasResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categorias" type="tns:categoriaws" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCategoriaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCategoriaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categoria" type="tns:categoriaws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="postCategoriaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categoria" type="tns:categoriaws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postCategoriaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categoria" type="tns:categoriaws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="putCategoriaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categoria" type="tns:categoriaws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="putCategoriaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="categoria" type="tns:categoriaws"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
